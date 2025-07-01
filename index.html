@@ -11,7 +11,7 @@
     :root {
       --azul-principal: #64B5F6;
       --azul-secundario: #90CAF9;
-      --verde-agua: #80DEEA;
+      --verde-destacado: #4CAF50; /* Verde nuevo */
       --naranja-suave: #FFB74D;
       --amarillo-crema: #FFF176;
       --fondo: #E3F2FD;
@@ -67,7 +67,7 @@
 
     .ticket-header {
       text-align: center;
-      margin-bottom: 20px;
+      margin-bottom: 0; /* Eliminamos margen inferior para control manual */
     }
 
     .festival-name {
@@ -89,21 +89,48 @@
       font-weight: 600;
       letter-spacing: 0.5px;
       box-shadow: 0 3px 8px rgba(100, 181, 246, 0.3);
+      margin-bottom: 0; /* Eliminamos margen para control preciso */
     }
+
+    /* ESTILO MEJORADO PARA GRUPO 1 */
+    .group-badge {
+      display: block;
+      font-size: 1rem;
+      font-weight: 800;
+      color: var(--verde-destacado); /* Verde en lugar de rojo */
+      margin: 12px 0 12px 0; /* Mismos márgenes superior e inferior para centrado perfecto */
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      text-align: center;
+      position: relative;
+    }
+
+    /* Líneas decorativas opcionales (puedes eliminar este bloque si no las quieres) */
+    .group-badge::before,
+    .group-badge::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      width: 20%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--verde-destacado), transparent);
+    }
+    .group-badge::before { left: 0; }
+    .group-badge::after { right: 0; }
 
     .ticket-body {
       display: flex;
       flex-direction: column;
       align-items: center;
       gap: 20px;
-      margin: 20px 0;
+      margin: 16px 0 20px 0; /* Ajuste fino de márgenes */
     }
 
     .ticket-id-container {
       display: flex;
       flex-direction: column;
       align-items: center;
-      margin: 10px 0;
+      margin: 0; /* Eliminamos margen para control desde ticket-body */
       width: 100%;
     }
 
@@ -229,6 +256,10 @@
         font-size: 2rem;
       }
       
+      .group-badge {
+        font-size: 1.1rem;
+      }
+      
       .ticket-id {
         font-size: 2.5rem;
       }
@@ -250,6 +281,7 @@
     <div class="ticket-header">
       <h1 class="festival-name">Festival Río 2025</h1>
       <div class="ticket-type">COLEGIO TLAHTOANI</div>
+      <div class="group-badge">GRUPO 1</div> <!-- Ahora perfectamente centrado -->
     </div>
     
     <div class="ticket-body">
